@@ -202,6 +202,12 @@ class FlappyBird(base.PyGameWrapper):
         self.images = {}
 
         # so we can preload images
+        
+        # Therhappy:
+        # quick and (very) dirty way to ensure no display
+        os.environ['SDL_VIDEODRIVER'] = 'dummy'
+        ###
+        
         pygame.display.set_mode((1, 1), pygame.NOFRAME)
 
         self._dir_ = os.path.dirname(os.path.abspath(__file__))
